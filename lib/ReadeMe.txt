@@ -1,0 +1,13 @@
+########################################
+			依赖库说明
+
+1. ldd libTradeInterfaceSDK.62803.so
+	libssl.so.10 
+	libcrypto.so.10 
+	libstdc++.so.6 
+	libc.so.6 
+	libk5crypto.so.3 
+	libpthread.so.0 
+
+2. 建议自行安装openssl，通过-L来引入libss.so 和 libcrypto.so
+

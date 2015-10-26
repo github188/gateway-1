@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<config>
+	<!-- 
+	服务配置:
+	groupno: 组号
+	logdir : 日志目录 
+	logprefix : 日志文件名
+	queryhost : 报警访问IP
+	queryport : 报警访问端口
+	runlog : 运行日志 1 : 开起; 0 : 关闭
+	-->
+	<basic groupno="3" logdir = "../log/" logprefix = "gateway" queryhost = "192.168.19.192" queryport = "12345" runlog = "1"/>
+	
+	<!--
+	时间参数配置
+	sleeptime:心跳时间间隔
+	stoptime :无业务请求线程停止时间阀值
+	outtime  :长时间无业务请求线程统计时间阀值
+	-->
+	<timepara sleeptime="10" stoptime="300" outtime="900" />
+	
+	<!--
+	redis参数配置
+	commip :		redis服务器IP
+	commport :	redis服务器port	
+	expiretime :生存时间(s)
+	-->
+	<redis commip="192.168.19.192" commport="6379" expiretime="120" />
+	
+	<!--
+	业务参数配置
+	memberno:会员号
+	-->
+	<bizpara memberno="003" />
+		
+	<!--
+	交易所前置配置:
+	commip :		交易所前置IP
+	commport :	交易所前置port
+	-->
+       <!-- 	
+	<exchange commip="vtradeweb1.qhpcc.com" commport="90" />
+	-->
+	
+		
+  <exchange commip="183.62.250.17" commport="10006" />
+       
+
+
+	<!--
+	监控配置:
+	commip :		通讯平台IP
+	commport :	通讯平台port
+	-->
+	<monitor commip="192.168.19.192" commport="7500" />
+		
+  <!-- 
+	服务配置:
+	commip :      通讯平台IP
+  commport :    通讯平台port
+	readtimeout : 通讯平台读超时 ms
+  asynfuncno  : 
+	-->
+  <asynconn commip="192.168.19.192" commport="7500" readtimeout="4000" asynfuncno="16090"/>
+
+  <!-- 
+	服务配置:
+  委托，查询业务请求路由信息
+	-->
+  <orderroute funcno="16091" branchno ="400"/>
+  <queryroute funcno="6688" branchno ="400"/>
+
+
+</config>
